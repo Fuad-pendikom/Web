@@ -3,53 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FUAD - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>FUAD Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <!-- sementara teks, nanti ganti gambar -->
-      <img src="assets/logo.png" alt="FUAD Logo" onerror="this.style.display='none'">
-      <h1>FUAD</h1>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">FUAD</div>
+    <ul class="nav-links">
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Forum</a></li>
+      <li><a href="#">Tugas</a></li>
+      <li><a href="#">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Selamat Datang di Website FUAD</h1>
+      <p>Forum mahasiswa untuk berbagi informasi, diskusi, dan kolaborasi.</p>
     </div>
-    <nav>
-    <a href="index.html">Home</a>
-    <a href="profil.html">Profil</a>
-    <a href="artikel.html">Artikel</a>   <!-- pakai 'artikels.html' -->
-    <a href="forum.html">Forum</a>
-    <a href="task.html">Tugas</a>
-    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Selamat Datang di Website FUAD</h2>
-      <p>Tempat kumpul, berbagi ilmu, diskusi, dan mengerjakan tugas bareng.</p>
-    </section>
-
-    <section class="cards">
+  <!-- Profil Section -->
+  <section class="profiles">
+    <h2>Profil Anggota</h2>
+    <div class="card-container">
       <div class="card">
-        <h3>Profil</h3>
-        <p>Kenali siapa saja anggota FUAD dan tujuan komunitas ini.</p>
+        <h3>Cahyo Bagaskoro</h3>
+        <p>Mahasiswa FUAD</p>
       </div>
+      <div class="card">
+        <h3>Rifki Arkana</h3>
+        <p>Mahasiswa FUAD</p>
+      </div>
+      <div class="card">
+        <h3>Pasha Ridho Pradipta S.</h3>
+        <p>Mahasiswa FUAD</p>
+      </div>
+      <div class="card">
+        <h3>Muhammad Raihan Rafi</h3>
+        <p>Mahasiswa FUAD</p>
+      </div>
+      <div class="card">
+        <h3>Bagus Arifin</h3>
+        <p>Mahasiswa FUAD</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+  <section class="features">
+    <h2>Menu Utama</h2>
+    <div class="card-container">
       <div class="card">
         <h3>Artikel</h3>
-        <p>Baca artikel terbaru dan catatan kegiatan kami.</p>
+        <p>Baca berbagai artikel terbaru.</p>
       </div>
       <div class="card">
-        <h3>Forum</h3>
-        <p>Diskusi bebas antar anggota FUAD di forum online.</p>
+        <h3>Forum Diskusi</h3>
+        <p>Ikuti diskusi bersama mahasiswa.</p>
       </div>
       <div class="card">
         <h3>Tugas</h3>
-        <p>Upload dan akses tugas bersama dengan mudah.</p>
+        <p>Upload & unduh tugas kuliah.</p>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>Kontak</h3>
+        <p>Hubungi pengurus FUAD.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 FUAD Group</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 FUAD. Semua Hak Dilindungi.</p>
   </footer>
 </body>
 </html>
