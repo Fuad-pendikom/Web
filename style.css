@@ -24,6 +24,21 @@ h2 { margin-bottom: 20px; font-size: 24px; }
 .card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 .card h3 { margin-bottom: 10px; }
 
+/* Button (Google Drive & umum) */
+.btn {
+  display: inline-block;
+  background: #007BFF;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #0056b3;
+}
+
 /* Form */
 form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; }
 input, button { padding: 10px; border-radius: 8px; border: 1px solid #ccc; }
