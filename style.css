@@ -61,8 +61,20 @@ button:hover { background: #0056b3; }
 /* Footer */
 footer { text-align: center; padding: 20px; margin-top: 40px; background: #fff; border-top: 1px solid #ddd; }
 
+/* Judul jadi biru */
+.judul-biru {
+  color: #007bff;
+}
+
+/* Nama ketua di tengah */
+.nama-ketua {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+/* Card ketua biar ketengah */
 .center {
-  text-align: center;     /* teks di tengah */
-  margin: 0 auto;         /* bikin kotak card di tengah */
-  max-width: 400px;       /* biar nggak terlalu melebar */
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
 }
