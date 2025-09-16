@@ -1,39 +1,89 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f9;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
 }
 
-.login-container, .chat-container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-#messages {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 10px;
+/* Card */
+.login-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Input */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
   border: 1px solid #ddd;
-  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.3s;
 }
 
-.my-message {
-  text-align: right;
-  background: #d1ffd6;
-  margin: 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
+.login-card input:focus {
+  border-color: #4e73df;
 }
 
-.other-message {
-  text-align: left;
-  background: #e6e6e6;
-  margin: 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
+/* Buttons */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 8px;
+  background: #4e73df;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #375ac7;
+}
+
+button.outline {
+  background: transparent;
+  border: 2px solid #4e73df;
+  color: #4e73df;
+}
+
+button.outline:hover {
+  background: #4e73df;
+  color: #fff;
 }
