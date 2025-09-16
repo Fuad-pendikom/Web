@@ -1,28 +1,13 @@
-/* Global reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  height: 100vh;
+/* Forum Section */
+.forum-section {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 70vh;
   background: linear-gradient(135deg, #4e73df, #1cc88a);
+  padding: 2rem;
 }
 
-/* Container */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-/* Card */
 .login-card {
   background: #fff;
   padding: 2rem;
@@ -37,7 +22,6 @@ body {
   color: #333;
 }
 
-/* Input */
 .login-card input {
   width: 100%;
   padding: 12px;
@@ -53,7 +37,6 @@ body {
   border-color: #4e73df;
 }
 
-/* Buttons */
 .btn-group {
   display: flex;
   justify-content: space-between;
