@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FUAD - Forum</title>
+  <title>Forum Chat</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>FUAD</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="materi.html">Materi</a></li>
-        <li><a href="forum.html" class="active">Forum</a></li>
-        <li><a href="tugas.html">Tugas</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="chat-container">
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Ketik pesan...">
+    <button id="send">Kirim</button>
+  </div>
 
-  <section class="forum">
-    <h2>Diskusi Forum</h2>
-    <div class="card">
-      <h3>Topik 1</h3>
-      <p>Isi diskusi singkat topik 1...</p>
-    </div>
-    <div class="card">
-      <h3>Topik 2</h3>
-      <p>Isi diskusi singkat topik 2...</p>
-    </div>
-  </section>
+  <script type="module">
+    import { auth, db } from "./firebase.js";
+    import { collection, addDoc, onSnapshot, serverTimestamp, query, orderBy } 
+      from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+    import { onAuthStateChanged } 
+      from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-  <footer>
-    <p>© 2025 FUAD Goyang</p>
-  </footer>
+    const messagesDiv = document.getElementById("messages");
+    const input = document.getElementById("messageInput");
+    const sendBtn = document.getElementById("send");
+
+    let currentUser = null;
+
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        currentUser = user;
+        loadMessages();
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+
+    sendBtn.onclick = async () => {
+      if (!input.value) return;
+      await addDoc(collection(db, "messages"), {
+        text: input.value,
+        uid: currentUser.uid,
+        email: currentUser.email,
+        createdAt: serverTimestamp()
+      });
+      input.value = "";
+    };
+
+    function loadMessages() {
+      const q = query(collection(db, "messages"), orderBy("createdAt"));
+      onSnapshot(q, snapshot => {
+        messagesDiv.innerHTML = "";
+        snapshot.forEach(doc => {
+          const msg = doc.data();
+          const div = document.createElement("div");
+          div.className = msg.uid === currentUser.uid ? "my-message" : "other-message";
+          div.innerText = `${msg.email}: ${msg.text}`;
+          messagesDiv.appendChild(div);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
